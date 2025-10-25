@@ -2,65 +2,66 @@
 interface Option {
   text: string;
   vec: number[];
-
 }
+
 interface Question {
   id: number;
   question: string;
   options: [Option, Option, Option, Option]; // add more options
 }
+
 export type { Question, Option };
 
 export const questions: Array<Question> = [
   {
     // hardcode more options
     id: 1,
-    question: "What does the `this` keyword refer to in a regular function (non-arrow) in JavaScript?",
+    question: "Which spoons are you?",
     options: [
-      { text: "The global object", vec: [0,0,0,0,0,0,0,0,0,0] },
-      { text: "The function itself", vec: [0,0,0,0,0,0,0,0,0,0] },
-      { text: "The parent function", vec: [0, 0,0,0,0,0,0,0,0,0] },
-      { text: "It’s always `undefined`", vec: [0, 0,0,0,0,0,0,0,0,0] },
+      { text: "Society Spoon", vec: [0,0,0,0,0,0,0,0,0,0] },
+      { text: "Counting House", vec: [0,0,0,0,0,0,0,0,0,0] },
+      { text: "Hendler's Circus", vec: [0, 0,0,0,0,0,0,0,0,0] },
+      { text: "Crystal Palace", vec: [0, 0,0,0,0,0,0,0,0,0] },
     ],
   },
   {
     id: 2,
-    question: "Which CSS property makes an element invisible without removing it from the document flow?",
+    question: "What spoons drink are you?",
     options: [
-      { text: "visibility: hidden", vec: [0, 0,0,0,0,0,0,0,0,0] },
-      { text: "display: none", vec: [0, 0,0,0,0,0,0,0,0,0]},
-      { text: "opacity: 0", vec: [0, 0,0,0,0,0,0,0,0,0] },
-      { text: "z-index: -1",vec: [0, 0,0,0,0,0,0,0,0,0]},
+      { text: "Sex on the beach pitcher", vec: [0, 0,0,0,0,0,0,0,0,0] },
+      { text: "Bell's whiskey", vec: [0, 0,0,0,0,0,0,0,0,0]},
+      { text: "Woohoo pitcher", vec: [0, 0,0,0,0,0,0,0,0,0] },
+      { text: "Kopparberg",vec: [0, 0,0,0,0,0,0,0,0,0]},
     ],
   },
   {
     id: 3,
-    question: "Which JavaScript method removes the last element of an array?",
+    question: "How do you like your whiskey",
     options: [
-      { text: "shift()", vec: [0, 0,0,0,0,0,0,0,0,0] },
-      { text: "pop()", vec: [0, 0,0,0,0,0,0,0,0,0] },
-      { text: "splice()", vec: [0, 0,0,0,0,0,0,0,0,0]},
-      { text: "remove()`", vec: [0, 0,0,0,0,0,0,0,0,0] },
+      { text: "straight", vec: [0, 0,0,0,0,0,0,0,0,0] },
+      { text: "cheap", vec: [0, 0,0,0,0,0,0,0,0,0] },
+      { text: "sour", vec: [0, 0,0,0,0,0,0,0,0,0]},
+      { text: "not", vec: [0, 0,0,0,0,0,0,0,0,0] },
     ],
   },
   {
     id: 4,
-    question: "What does the `<section>` tag in HTML represent?",
+    question: "How close are you to retirement?",
     options: [
-      { text: "A paragraph", vec: [0, 0,0,0,0,0,0,0,0,0]},
-      { text: "A generic container", vec: [0, 0,0,0,0,0,0,0,0,0] },
-      { text: "A standalone thematic grouping", vec: [0, 0,0,0,0,0,0,0,0,0] },
-      { text: "A navigation bar`", vec: [0, 0,0,0,0,0,0,0,0,0] },
+      { text: "This is my retirement party", vec: [0, 0,0,0,0,0,0,0,0,0]},
+      { text: "Years....", vec: [0, 0,0,0,0,0,0,0,0,0] },
+      { text: "Hundreds of thousands", vec: [0, 0,0,0,0,0,0,0,0,0] },
+      { text: "I won't be able to retire", vec: [0, 0,0,0,0,0,0,0,0,0] },
     ],
   },
   {
     id: 5,
-    question: "In Flexbox, what does `flex: 1` do?",
+    question: "Musical theatre?",
     options: [
-      { text: "Hides the element", vec: [0, 0,0,0,0,0,0,0,0,0] },
-      { text: "Forces the element to shrink only", vec: [0, 0,0,0,0,0,0,0,0,0] },
-      { text: "Allows the element to grow and fill space", vec: [0, 0,0,0,0,0,0,0,0,0] },
-      { text: "Makes the element fixed-width`", vec: [0, 0,0,0,0,0,0,0,0,0] },
+      { text: "Slay the house boots down", vec: [0, 0,0,0,0,0,0,0,0,0]},
+      { text: "No", vec: [0, 0,0,0,0,0,0,0,0,0] },
+      { text: "Bicurious", vec: [0, 0,0,0,0,0,0,0,0,0] },
+      { text: "If I must (bicurious)", vec: [0, 0,0,0,0,0,0,0,0,0] },
     ],
   },
 ];

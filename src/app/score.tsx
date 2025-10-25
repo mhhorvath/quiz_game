@@ -8,6 +8,7 @@ interface ScoreProps {
 }
 
 export default function Score({ show, result, onNext }: ScoreProps) {
+
   return show ? (
     <div className="flex items-center justify-center min-h-screen px-4">
       <div className="max-w-4xl w-full flex flex-col lg:flex-row items-center lg:items-start gap-12">
@@ -17,7 +18,7 @@ export default function Score({ show, result, onNext }: ScoreProps) {
           <div className="my-5">
             <div className="w-full bg-slate-300 dark:bg-slate-700 p-10 rounded text-center">
               <div className="text-6xl font-bold ">
-                {result.score} / {result.total}
+                {result.score}
               </div>
             </div>
           </div>
