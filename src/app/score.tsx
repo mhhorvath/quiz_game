@@ -25,7 +25,7 @@ export default function Score({ show, result, onNext }: ScoreProps) {
           <div>
             <button
               onClick={onNext}
-              className="text-lg bg-gradient-to-r from-purple-600 to-blue-600  px-10 py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-200 shadow-lg"
+              className="text-lg bg-gradient-to-r from-purple-600 to-blue-600  px-10 py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-10 shadow-lg"
             >
               Start Quiz
             </button>

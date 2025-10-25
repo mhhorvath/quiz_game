@@ -54,7 +54,7 @@ export default function Quiz({ show, onSumbit }: QuizProps) {
         const result = { score: newScore, total: questions.length };
         onSumbit(result);
       }
-    }, 1000);
+    }, 10);
   };
 
   return show && questions.length ? (
