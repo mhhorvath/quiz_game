@@ -2,6 +2,7 @@
 interface Option {
   text: string;
   vec: number[];
+  // could add image to option box
 }
 
 interface Question {
@@ -14,7 +15,7 @@ export type { Question, Option };
 
 export const questions: Array<Question> = [
   {
-    // hardcode more options
+    // something needs calibrating here because we keep getting the same options.. (riddle pub quiz)
     id: 1,
     question: "Which spoons are you?",
     options: [
