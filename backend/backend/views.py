@@ -13,21 +13,18 @@ class PlanView(viewsets.ModelViewSet):
   
   
 class ClosestPlan(APIView):
-    closest_plan = None
     
     def post(self, request):
         arr = np.array(request.data)
         plans = Plan.objects.all()
         vectors = [np.array(i.arr) for i in plans]
         minarg = 0
-        min_sim = np.inf
+        max_sim = np.inf
         for i in range(len(vectors)):
-            similarity = np.sum(arr * i)/ np.linalg.norm(arr) * np.linalg.norm(i)
-            if similarity < min_sim:
-                min_sim = similarity
+            similarity = np.dot(arr, vectors[i]) / (np.linalg.norm(arr) * np.linalg.norm(vectors[i]))
+            if similarity > max_sim:
+                max_sim = similarity
                 minarg = i
         print(plans[minarg])
-        self.closest_plan = PlanSerializer(plans[minarg])
-    
-    def get(self):
-        return Response(self.closest_plan)
+        closest_plan = PlanSerializer(plans[minarg]).data
+        return Response({"message": "Got some data!", "data":closest_plan})
