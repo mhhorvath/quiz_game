@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Welcome from "./welcome";
 import Quiz from "./quiz";
 import Score from "./score";
+import useFetchPlan from "./useFetchPlan";
 
 export interface QuizResult {
   score: number[]; //this needs to be a list
@@ -19,6 +20,7 @@ export default function Home() {
   const [showQuiz, setShowQuiz] = useState(false);
   const [showScore, setShowScore] = useState(false);
   const [scoreResult, setScoreResult] = useState<QuizResult | null>(null);
+  const {postData:postData} = useFetchPlan();
 
   useEffect(() => {
     initGame();
@@ -41,7 +43,10 @@ export default function Home() {
     setShowStart(false);
     setShowQuiz(true);
   };
+
   const onSumbit = (result: QuizResult) => {
+    const data = postData(result.score);
+    console.log(data)
     console.log("Quiz result:", result);
     setShowQuiz(false);
     setShowStart(false);
