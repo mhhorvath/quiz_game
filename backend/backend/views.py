@@ -18,15 +18,16 @@ class ClosestPlan(APIView):
         arr = np.array(request.data)
         plans = Plan.objects.all()
         vectors = [np.array(i.arr) for i in plans]
+        vectors = [i - np.mean(i) for i in vectors]
         vectors = [i / np.linalg.norm(i) for i in vectors]
         minarg = 0
         max_sim = -np.inf
         for i in range(len(vectors)):
-            print(np.linalg.norm(vectors[i]))
             similarity = np.dot(arr, vectors[i]) / (np.linalg.norm(arr) * np.linalg.norm(vectors[i]))
             if similarity > max_sim:
                 max_sim = similarity
                 minarg = i
+        print(arr)
         print(plans[minarg])
         closest_plan = PlanSerializer(plans[minarg]).data
         return Response({"message": "Got some data!", "data":closest_plan})
