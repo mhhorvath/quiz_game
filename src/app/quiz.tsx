@@ -50,11 +50,14 @@ export default function Quiz({ show, onSumbit }: QuizProps) {
         setIndex(index + 1);
         setSelectedOptionIndex(null); // Reset selected option for next question
       } else {
+        var tem = 0;
         for (var j = 0; j < newScore.length; j ++){
             newScore[j] = newScore[j]/(questions.length);
-            console.log(newScore[j]);
+            tem += newScore[j];
         }
-        const result = { score: newScore, total: questions.length };
+        const mag = Math.sqrt(newScore.reduce((sum, v) => sum + v * v, 0));
+        const normalised = mag === 0 ? newScore : newScore.map(v => v / mag);
+        const result = { score: normalised, total: questions.length };
         onSumbit(result);
       }
     }, 10);
