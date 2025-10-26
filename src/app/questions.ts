@@ -21,7 +21,7 @@ export const questions: Array<Question> = [
     options: [
       { text: "Society Spoon", vec: [0,0,0,0,0,0,0,0,0,0] },
       { text: "Counting House", vec: [0,0,0,0,0,0,0,0,0,0] },
-      { text: "Hendler's Circus", vec: [0, 0,0,0,0,0,0,0,0,0] },
+      { text: "Hengler's Circus", vec: [0,0,0,0,0,0,0,0,0,0] },
       { text: "Crystal Palace", vec: [0, 0,0,0,0,0,0,0,0,0] },
     ],
   },

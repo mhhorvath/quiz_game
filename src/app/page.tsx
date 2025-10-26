@@ -54,8 +54,6 @@ export default function Home() {
     .then(res => {
       setPlan(res.data);
     })
-    console.log(plan?.name);
-    console.log(plan?.description);
     setShowQuiz(false);
     setShowStart(false);
     if (result.total) {
