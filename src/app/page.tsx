@@ -13,6 +13,10 @@ export interface QuizProps {
   show: boolean;
   onSumbit: (result: QuizResult) => void;
 }
+export interface Plan{
+  name:string;
+  description:string;
+}
 
 export default function Home() {
   const [theme, setTheme] = useState<string | null>(null);
@@ -20,7 +24,8 @@ export default function Home() {
   const [showQuiz, setShowQuiz] = useState(false);
   const [showScore, setShowScore] = useState(false);
   const [scoreResult, setScoreResult] = useState<QuizResult | null>(null);
-  const {postData:postData} = useFetchPlan();
+  const [plan, setPlan] = useState<Plan|null>(null);
+  const {postData} = useFetchPlan();
 
   useEffect(() => {
     initGame();
@@ -45,8 +50,12 @@ export default function Home() {
   };
 
   const onSumbit = (result: QuizResult) => {
-    const data = postData(result.score);
-    console.log(data)
+    postData(result.score)
+    .then(res => {
+      setPlan(res.data);
+    })
+    console.log(plan?.name);
+    console.log(plan?.description);
     console.log("Quiz result:", result);
     setShowQuiz(false);
     setShowStart(false);

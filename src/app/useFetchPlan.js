@@ -3,7 +3,6 @@ import AxiosInstance from "./AxiosInstance";
 
 const useFetchPlan = () => {
     const endpoint = "closest"
-    const [data, setData] = useState(null);
 
     const postData = async(data) =>{
         try {
@@ -15,7 +14,7 @@ const useFetchPlan = () => {
         }
     };
 
-  return {data, postData};
+  return {postData};
 };
 
 export default useFetchPlan;
