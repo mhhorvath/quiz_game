@@ -35,7 +35,6 @@ export default function Quiz({ show, onSumbit }: QuizProps) {
   };
 
   const submitOption = () => {
-    // needs changing to get vector for question
     if (selectedOptionIndex === null) return;
     // Check if the selected option is correct
     let newScore = score;
@@ -51,6 +50,9 @@ export default function Quiz({ show, onSumbit }: QuizProps) {
         setIndex(index + 1);
         setSelectedOptionIndex(null); // Reset selected option for next question
       } else {
+        for (let j = 0; j < newScore.length; j ++){
+            newScore[j] = newScore[j]/questions.length;
+        }
         const result = { score: newScore, total: questions.length };
         onSumbit(result);
       }

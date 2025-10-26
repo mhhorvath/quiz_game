@@ -7,63 +7,12 @@ interface Option {
 interface Question {
   id: number;
   question: string;
-  options: [Option, Option, Option, Option]; // add more options
+  options: [Option, Option, Option, Option];
 }
 
 export type { Question, Option };
 
 export const questions: Array<Question> = [
-  {
-    // hardcode more options
-    id: 1,
-    question: "Which spoons are you?",
-    options: [
-      { text: "Society Spoon", vec: [0,0,0,0,0,0,0,0,0,0] },
-      { text: "Counting House", vec: [0,0,0,0,0,0,0,0,0,0] },
-      { text: "Hendler's Circus", vec: [0, 0,0,0,0,0,0,0,0,0] },
-      { text: "Crystal Palace", vec: [0, 0,0,0,0,0,0,0,0,0] },
-    ],
-  },
-  {
-    id: 2,
-    question: "What spoons drink are you?",
-    options: [
-      { text: "Sex on the beach pitcher", vec: [0, 0,0,0,0,0,0,0,0,0] },
-      { text: "Bell's whiskey", vec: [0, 0,0,0,0,0,0,0,0,0]},
-      { text: "Woohoo pitcher", vec: [0, 0,0,0,0,0,0,0,0,0] },
-      { text: "Kopparberg",vec: [0, 0,0,0,0,0,0,0,0,0]},
-    ],
-  },
-  {
-    id: 3,
-    question: "How do you like your whiskey",
-    options: [
-      { text: "straight", vec: [0, 0,0,0,0,0,0,0,0,0] },
-      { text: "cheap", vec: [0, 0,0,0,0,0,0,0,0,0] },
-      { text: "sour", vec: [0, 0,0,0,0,0,0,0,0,0]},
-      { text: "not", vec: [0, 0,0,0,0,0,0,0,0,0] },
-    ],
-  },
-  {
-    id: 4,
-    question: "How close are you to retirement?",
-    options: [
-      { text: "This is my retirement party", vec: [0, 0,0,0,0,0,0,0,0,0]},
-      { text: "Years....", vec: [0, 0,0,0,0,0,0,0,0,0] },
-      { text: "Hundreds of thousands", vec: [0, 0,0,0,0,0,0,0,0,0] },
-      { text: "I won't be able to retire", vec: [0, 0,0,0,0,0,0,0,0,0] },
-    ],
-  },
-  {
-    id: 5,
-    question: "Musical theatre?",
-    options: [
-      { text: "Slay the house boots down", vec: [0, 0,0,0,0,0,0,0,0,0]},
-      { text: "No", vec: [0, 0,0,0,0,0,0,0,0,0] },
-      { text: "Bicurious", vec: [0, 0,0,0,0,0,0,0,0,0] },
-      { text: "If I must (bicurious)", vec: [0, 0,0,0,0,0,0,0,0,0] },
-    ],
-  },
   {
     id: 8,
     question: "Which data types are immutable?",
@@ -128,10 +77,10 @@ export const questions: Array<Question> = [
     id: 14,
     question: "Let me present you with a hypothetical... ",
     options: [
-      { text: "C", vec: [2, 1, 0, 5, 2, 2, 0, 5, 5, 8]},
+      { text: "A", vec: [2, 1, 0, 5, 2, 2, 0, 5, 5, 8]},
       { text: "B", vec: [1, 0, 5, 2, 2, 0, 5, 5, 8, 5] },
-      { text: "D", vec: [0, 5, 2, 2, 0, 5, 5, 8, 5, 1] },
-      { text: "A", vec: [5, 2, 2, 0, 5, 5, 8, 5, 1, 3] },
+      { text: "C", vec: [0, 5, 2, 2, 0, 5, 5, 8, 5, 1] },
+      { text: "D", vec: [5, 2, 2, 0, 5, 5, 8, 5, 1, 3] },
     ],
   },
   {
@@ -152,6 +101,16 @@ export const questions: Array<Question> = [
       { text: "Thinking of ways to improve", vec: [5, 1, 3, 3, 4, 3, 3, 5, 2, 6] },
       { text: "The horrors of modern life", vec: [1, 3, 3, 4, 3, 3, 5, 2, 6, 7] },
       { text: "Skeletons", vec: [3, 3, 4, 3, 3, 5, 2, 6, 7, 7] },
+    ],
+  },
+  {
+    id: 17,
+    question: "Musical theatre?",
+    options: [
+      { text: "Slay the house boots down", vec: [3, 4, 3, 3, 5, 2, 6, 7, 7, 1]},
+      { text: "No", vec: [4, 3, 3, 5, 2, 6, 7, 7, 1, 7]},
+      { text: "Bicurious", vec: [5, 0, 3, 0, 3, 1, 9, 2, 1, 0] },
+      { text: "If I must (bicurious)", vec: [3, 3, 5, 2, 6, 7, 7, 1, 7, 9] },
     ],
   },
   {
@@ -197,4 +156,5 @@ export const questions: Array<Question> = [
       { text: "R", vec: [2, 8, 9, 8, 4, 9, 6, 2, 8, 5] },
     ],
   },
+
 ];
