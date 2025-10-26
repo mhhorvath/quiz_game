@@ -19,7 +19,7 @@ class ClosestPlan(APIView):
         plans = Plan.objects.all()
         vectors = [np.array(i.arr) for i in plans]
         minarg = 0
-        max_sim = np.inf
+        max_sim = -np.inf
         for i in range(len(vectors)):
             similarity = np.dot(arr, vectors[i]) / (np.linalg.norm(arr) * np.linalg.norm(vectors[i]))
             if similarity > max_sim:

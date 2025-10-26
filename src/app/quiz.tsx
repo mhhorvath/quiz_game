@@ -50,8 +50,9 @@ export default function Quiz({ show, onSumbit }: QuizProps) {
         setIndex(index + 1);
         setSelectedOptionIndex(null); // Reset selected option for next question
       } else {
-        for (let j = 0; j < newScore.length; j ++){
-            newScore[j] = newScore[j]/questions.length;
+        for (var j = 0; j < newScore.length; j ++){
+            newScore[j] = newScore[j]/(questions.length);
+            console.log(newScore[j]);
         }
         const result = { score: newScore, total: questions.length };
         onSumbit(result);
@@ -109,7 +110,7 @@ export default function Quiz({ show, onSumbit }: QuizProps) {
             ref={submitBtnRef}
           >
             <div
-              className={`text-lg bg-gradient-to-r from-purple-600 to-blue-600  px-10 py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-200 shadow-lg ${
+              className={`text-lg bg-white text-gray-800  px-10 py-3 rounded-lg font-semibold hover:from-white-100 hover:via-white-700 hover:to-white-100 transition-all duration-200 shadow-lg ${
                 selectedOptionIndex === null ? "opacity-50 cursor-not-allowed" : ""
               }`}
             >

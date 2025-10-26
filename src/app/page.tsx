@@ -56,7 +56,6 @@ export default function Home() {
     })
     console.log(plan?.name);
     console.log(plan?.description);
-    console.log("Quiz result:", result);
     setShowQuiz(false);
     setShowStart(false);
     if (result.total) {
@@ -72,7 +71,7 @@ export default function Home() {
   };
   return (
     <div
-      className={`min-h-screen bg-gradient-to-br from-slate-100 to-slate-300 dark:from-slate-800 dark:via-slate-900 dark:to-slate-900 text-slate-900 dark:text-white relative overflow-hidden ${theme}`}
+      className={`min-h-screen bg-gradient-to-br from-sky-100 to-sky-300 dark:from-sky-800 dark:via-sky-900 dark:to-sky-900 text-blue-900 dark:text-white relative overflow-hidden ${theme}`}
     >
       <div id="colorSwitch" className="absolute top-4 right-4">
         <div>
@@ -103,7 +102,7 @@ export default function Home() {
       </div>
       <Welcome show={showStart} onNext={startQuiz} />
       <Quiz show={showQuiz} onSumbit={onSumbit} />
-      <Score show={showScore} result={scoreResult!} onNext={restartQuiz} />
+      <Score show={showScore} plan={plan} result={scoreResult!} onNext={restartQuiz} />
     </div>
   );
 }
