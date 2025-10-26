@@ -16,6 +16,10 @@ class ClosestPlan(APIView):
     
     def post(self, request):
         arr = np.array(request.data)
+        
+        arr = arr - np.mean(arr)
+        arr = arr / np.linalg.norm(arr)
+        
         plans = Plan.objects.all()
         vectors = [np.array(i.arr) for i in plans]
         vectors = [i - np.mean(i) for i in vectors]
